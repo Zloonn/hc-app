@@ -1,0 +1,17 @@
+<div class="body">
+    <div class="content-container">
+        <form class="form-customer" (ngSubmit)="onSubmit(customerId.value)">
+            <mat-form-field>
+                <mat-label>Customer's ID</mat-label>
+                <input id="customerId" matInput #customerId>
+            </mat-form-field>
+            <button mat-raised-button>Submit</button>
+        </form>
+        <div class="score-card">
+            <h2>Result score</h2>
+            <mat-progress-spinner class="example-margin" mode="determinate" [value]="value" [diameter]="150">
+            </mat-progress-spinner>
+            <h2>{{value}}</h2>
+        </div>
+    </div>
+</div>
