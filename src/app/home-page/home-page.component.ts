@@ -21,15 +21,32 @@ import { HttpClientModule } from '@angular/common/http';
 
 export class HomePageComponent {
   value = 0
+  flag = 100
   dataToSend: { clientId: string } = { clientId: '' };
+  parametersUsed: any;
+  errorMessage: string | undefined;
 
   constructor(private creditService: CreditScoreService) { }
 
   onSubmit(customerId:string) {
     this.dataToSend = {clientId: customerId};
     this.creditService.getCreditScore(this.dataToSend).subscribe(response => {
-      this.value = response.score.toFixed(2);
-      console.log('Réponse de l\'API', response);
+      if (response.success == true) {
+        this.flag = 0;
+        this.value = response.score.toFixed(2);
+        this.parametersUsed = response.parameters_used;
+        this.errorMessage = ""
+      }
+    }, (error) => {
+      if (error.error && error.error.message) {
+        this.errorMessage = error.error.message;  
+      } else {
+        this.errorMessage = "Erreur inconnue";
+      }
+      this.parametersUsed = null;
+      this.flag = 100;
+      this.value = 0;
+      console.log(this.errorMessage)
     });
   }
 

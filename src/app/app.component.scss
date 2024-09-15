@@ -1,5 +1,11 @@
 .body {
     height: 100%;
+    padding: 4rem 0;
     background: rgb(217,217,217);
     background: linear-gradient(0deg, rgba(217,217,217,1) 0%, rgba(255,255,255,1) 15%, rgba(255,255,255,1) 85%, rgba(217,217,217,1) 100%);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
 }

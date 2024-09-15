@@ -4,8 +4,11 @@
     flex-direction: column;
 }
 
+.error {
+    color: red;
+}
+
 .form-customer {
-    padding: 8rem 0 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,4 +20,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.parameters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.parameter {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.parameter span:first-child {
+    font-weight: bold;
 }

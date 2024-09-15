@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CreditScoreService {
 
-  private apiUrl = 'http://127.0.0.1:8000/api/score/';  // Assurez-vous que l'URL pointe vers le bon endpoint
-
+  private apiUrl = 'http://127.0.0.1:8000/api/score/';
+  
   constructor(private http: HttpClient) { }
 
   getCreditScore(data: { clientId: string }): Observable<any> {

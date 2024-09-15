@@ -6,12 +6,73 @@
                 <input id="customerId" matInput #customerId>
             </mat-form-field>
             <button mat-raised-button>Submit</button>
+            <h2 class="error">{{errorMessage}}</h2>
         </form>
         <div class="score-card">
             <h2>Result score</h2>
-            <mat-progress-spinner class="example-margin" mode="determinate" [value]="value" [diameter]="150">
+            <mat-progress-spinner *ngIf="flag==100" class="example-margin" mode="determinate" [value]="flag" [diameter]="150">
+            </mat-progress-spinner>
+            <mat-progress-spinner *ngIf="flag==0" class="example-margin" mode="determinate" [value]="value" [diameter]="150">
             </mat-progress-spinner>
             <h2>{{value}}</h2>
         </div>
+        <div class="parameters-container">
+            <div class="parameter">
+                <span>AMT_ANNUITY:</span> <span>{{ parametersUsed?.AMT_ANNUITY }}</span>
+            </div>
+            <div class="parameter">
+                <span>AMT_CREDIT:</span> <span>{{ parametersUsed?.AMT_CREDIT }}</span>
+            </div>
+            <div class="parameter">
+                <span>AMT_GOODS_PRICE:</span> <span>{{ parametersUsed?.AMT_GOODS_PRICE }}</span>
+            </div>
+            <div class="parameter">
+                <span>AMT_INCOME_TOTAL:</span> <span>{{ parametersUsed?.AMT_INCOME_TOTAL }}</span>
+            </div>
+            <div class="parameter">
+                <span>CNT_CHILDREN:</span> <span>{{ parametersUsed?.CNT_CHILDREN }}</span>
+            </div>
+            <div class="parameter">
+                <span>CNT_FAM_MEMBERS:</span> <span>{{ parametersUsed?.CNT_FAM_MEMBERS }}</span>
+            </div>
+            <div class="parameter">
+                <span>DAYS_BIRTH:</span> <span>{{ parametersUsed?.DAYS_BIRTH }}</span>
+            </div>
+            <div class="parameter">
+                <span>DAYS_EMPLOYED:</span> <span>{{ parametersUsed?.DAYS_EMPLOYED }}</span>
+            </div>
+            <div class="parameter">
+                <span>DAYS_ID_PUBLISH:</span> <span>{{ parametersUsed?.DAYS_ID_PUBLISH }}</span>
+            </div>
+            <div class="parameter">
+                <span>DAYS_REGISTRATION:</span> <span>{{ parametersUsed?.DAYS_REGISTRATION }}</span>
+            </div>
+            <div class="parameter">
+                <span>EXT_SOURCE_1:</span> <span>{{ parametersUsed?.EXT_SOURCE_1 }}</span>
+            </div>
+            <div class="parameter">
+                <span>EXT_SOURCE_2:</span> <span>{{ parametersUsed?.EXT_SOURCE_2 }}</span>
+            </div>
+            <div class="parameter">
+                <span>EXT_SOURCE_3:</span> <span>{{ parametersUsed?.EXT_SOURCE_3 }}</span>
+            </div>
+            <div class="parameter">
+                <span>FLAG_EMAIL:</span> <span>{{ parametersUsed?.FLAG_EMAIL }}</span>
+            </div>
+            <div class="parameter">
+                <span>FLAG_EMP_PHONE:</span> <span>{{ parametersUsed?.FLAG_EMP_PHONE }}</span>
+            </div>
+            <div class="parameter">
+                <span>FLAG_MOBIL:</span> <span>{{ parametersUsed?.FLAG_MOBIL }}</span>
+            </div>
+            <div class="parameter">
+                <span>FLAG_WORK_PHONE:</span> <span>{{ parametersUsed?.FLAG_WORK_PHONE }}</span>
+            </div>
+            <div class="parameter">
+                <span>REGION_POPULATION_RELATIVE:</span> <span>{{ parametersUsed?.REGION_POPULATION_RELATIVE }}</span>
+            </div>
+        </div>
+
+
     </div>
 </div>
